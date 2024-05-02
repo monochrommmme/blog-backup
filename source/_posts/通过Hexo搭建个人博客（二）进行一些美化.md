@@ -14,8 +14,6 @@ tags:
 
 参考材料：[**Documentation | NexT**](https://theme-next.js.org/docs/)；[**Hexo文档**](https://hexo.io/zh-cn/docs/)；[**从零开始搭建个人博客（超详细）**](https://zhuanlan.zhihu.com/p/102592286)；[**Hexo+Next主题搭建个人博客+优化全过程（完整详细版）**](https://zhuanlan.zhihu.com/p/618864711)
 
-## 配置NexT主题
-
 ### 设置基本信息
 
 用npm
