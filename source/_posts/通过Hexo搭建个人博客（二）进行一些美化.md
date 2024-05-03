@@ -12,7 +12,7 @@ tags:
 
 <!-- more -->
 
-参考材料：[**Documentation | NexT**](https://theme-next.js.org/docs/)；[**Hexo文档**](https://hexo.io/zh-cn/docs/)；[**从零开始搭建个人博客（超详细）**](https://zhuanlan.zhihu.com/p/102592286)；[**Hexo+Next主题搭建个人博客+优化全过程（完整详细版）**](https://zhuanlan.zhihu.com/p/618864711)
+参考材料：[**Documentation | NexT**](https://theme-next.js.org/docs/)；[**Hexo文档**](https://hexo.io/zh-cn/docs/)；[**从零开始搭建个人博客（超详细）**](https://zhuanlan.zhihu.com/p/102592286)；[**Hexo+Next主题搭建个人博客+优化全过程（完整详细版）**](https://zhuanlan.zhihu.com/p/618864711)；[**Home - APlayer**](https://aplayer.js.org/#/home?id=options)；[**APlayer GitHub**](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md)；[**hexo-next-pjax文档**](https://github.com/theme-next/theme-next-pjax)；[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
 
 ### 设置基本信息
 
@@ -50,9 +50,9 @@ next提供了四种主题以及深色模式的选择。*第三第四个主题的
 ```yml
 # Schemes
 #scheme: Muse
-scheme: Mist
+#scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 
@@ -201,9 +201,56 @@ github_banner:
   title: Follow me on GitHub
 ```
 
-### 使用APlayer插件实现全局bgm播放
+### 使用APlayer和pjax插件实现全局音乐播放
 
-参考：[**APlayer中文文档**](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md),[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
+参考：[**APlayer中文文档**](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md)，[**hexo-next-pjax文档**](https://github.com/theme-next/theme-next-pjax)，[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
 
 安装APlayer插件
 `npm install --save hexo-tag-aplayer`
+
+打开blog/themes/next/layout/_layout.swig，添加
+```html
+<!-- 引用依赖 -->
+<link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+
+<!-- APlayer本体 -->
+<div class="aplayer" 
+  data-id="8885348672" 
+  data-server="netease" 
+  data-type="playlist" 
+  data-fixed="true"
+  data-autoplay="false" 
+  data-order="random" 
+  data-volume="0.55" 
+  data-theme="#cc543a" 
+  data-preload="auto"
+  data-lrctype="0" >
+  </div>
+```
+
+安装pjax插件
+`$ git clone https://github.com/theme-next/theme-next-pjax source/lib/pjax`
+
+编辑_config.next.yml
+```yml
+pjax: true
+```
+
+对blog\themes\next\layout\_partials\head\head.swig进行编辑：
+```html
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="{{ theme.android_chrome_color }}">
+<meta name="generator" content="Hexo {{ hexo_version }}">
+  
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <!-- 之所以不部署在_layout.swig是因为试过之后，对某篇文章进行刷新会进入html源代码界面，很神秘 -->
+```
+
+更新pjax的方法
+`$ cd themes/next/source/lib/pjax`
+`$ git pull`
