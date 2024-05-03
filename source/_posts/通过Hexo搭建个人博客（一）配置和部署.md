@@ -19,7 +19,7 @@ tags:
 
 首先下载和配置[**git**](https://git-scm.com/)和[**Nodejs**](https://nodejs.cn/)的环境
 
-Nodejs在可能需要管理员权限才能使用npm工具，你可以手动修改文件夹权限，或以管理员身份打开windows powershell到指定文件夹再操作；npm下载不更换国内镜像源的话可能需要科学上网
+Nodejs在可能需要管理员权限才能使用npm工具，遇到问题可以参考[**Windows下使用npm显示权限不够**](https://blog.csdn.net/mr__sun__/article/details/119140624)修改nodejs文件夹Users权限，或以管理员身份打开windows powershell到指定文件夹再操作；npm下载不更换国内镜像源的话可能需要科学上网
 
 ## 绑定GitHub
 
