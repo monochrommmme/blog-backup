@@ -190,6 +190,20 @@ symbols_count_time:
   item_text_total: false
 ```
 
+### 添加社交媒体链接
+
+对_config.next.yml进行编辑：
+```yml
+# Social Links
+# Usage: `Key: permalink || icon`
+# Key is the link label showing to end users.
+# Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
+social:
+  Music: https://music.163.com/#/user/home?id=1443483816 || fa fa-music
+```
+
+`||`之后是图标名，可以在[**Font Awesome**](https://fontawesome.com/icons)进行查找
+
 ### 右上角github横幅
 
 对_config.next.yml进行编辑：
@@ -248,8 +262,8 @@ pjax: true
   
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
-  <!-- 之所以不部署在_layout.swig是因为试过之后，对某篇文章进行刷新会进入html源代码界面，很神秘 -->
 ```
+之所以不部署在_layout.swig是因为实践时发现，刷新某篇文章后会进入html源代码界面，很神秘
 
 更新pjax的方法
 `$ cd themes/next/source/lib/pjax`
