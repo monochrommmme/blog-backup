@@ -217,7 +217,7 @@ github_banner:
 
 ### 实现全局音乐播放
 
-参考：[**APlayer中文文档**](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md)，[**hexo-next-pjax文档**](https://github.com/theme-next/theme-next-pjax)，[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
+参考：
 
 安装APlayer插件
 `npm install --save hexo-tag-aplayer`
