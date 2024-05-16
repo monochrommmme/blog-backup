@@ -1,5 +1,5 @@
 ---
-title: C语言基础知识收集
+title: 应试用C语言基础知识收集
 date: 2024-05-13 17:09:54
 categories: 
  - 学习笔记
@@ -16,7 +16,7 @@ tags:
 ### 前置
 
 [c语言vscode环境配置](https://zhuanlan.zhihu.com/p/354400717)
-[修改cmd控制台默认代码页编码的几种方法【GBK、UTF-8】](https://blog.csdn.net/qq_39621009/article/details/122817826)`utf-8:chcp 65001;gbk:chcp 936`
+[修改cmd控制台默认代码页编码的几种方法【GBK、UTF-8】](https://blog.csdn.net/qq_39621009/article/details/122817826)utf-8:`chcp 65001` gbk:`chcp 936`
 
 参考资料：
 [C 语言教程 - 网道](https://wangdoc.com/clang/)
