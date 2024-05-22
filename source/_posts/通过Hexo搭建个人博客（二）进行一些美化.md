@@ -204,6 +204,23 @@ social:
 
 `||`之后是图标名，可以在[**Font Awesome**](https://fontawesome.com/icons)进行查找
 
+### 设置博客头像
+
+对_config.next.yml进行编辑：
+```yml
+# Sidebar Avatar
+avatar:
+  # Replace the default image and set the url here.
+  url: /images/monoch-.png
+  # If true, the avatar will be dispalyed in circle.
+  rounded: true
+  # If true, the avatar will be rotated with the cursor.
+  rotated: false
+```
+url后路径的images文件夹在theme文件夹中
+rounded是头像圆形显示
+rotated是否跟随鼠标旋转
+
 ### 右上角github横幅
 
 对_config.next.yml进行编辑：
