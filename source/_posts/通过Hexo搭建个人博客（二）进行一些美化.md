@@ -8,11 +8,11 @@ tags:
  - Hexo
 ---
 
-对单调的blog页面添加一些组件，进行一些美化
+对单调的blog页面添加一些组件，进行一些美化。
 
 <!-- more -->
 
-参考材料：[**Documentation | NexT**](https://theme-next.js.org/docs/)；[**Hexo文档**](https://hexo.io/zh-cn/docs/)；[**从零开始搭建个人博客（超详细）**](https://zhuanlan.zhihu.com/p/102592286)；[**Hexo+Next主题搭建个人博客+优化全过程（完整详细版）**](https://zhuanlan.zhihu.com/p/618864711)；[**Home - APlayer**](https://aplayer.js.org/#/home?id=options)；[**APlayer GitHub**](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md)；[**hexo-next-pjax文档**](https://github.com/theme-next/theme-next-pjax)；[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
+参考材料：[**Documentation | NexT**](https://theme-next.js.org/docs/)；[**Hexo文档**](https://hexo.io/zh-cn/docs/)；[**从零开始搭建个人博客（超详细）**](https://zhuanlan.zhihu.com/p/102592286)；[**Hexo+Next主题搭建个人博客+优化全过程（完整详细版）**](https://zhuanlan.zhihu.com/p/618864711)；[**Home - APlayer**](https://aplayer.js.org/#/home?id=options)；[**APlayer GitHub**](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md)；[**hexo-next-pjax文档**](https://github.com/theme-next/theme-next-pjax)；[**hexo-next-darkmode/README_CN**](https://github.com/rqh656418510/hexo-next-darkmode/blob/main/README_CN.md)；[**Hexo Next 8.x 主题添加可切换的暗黑模式 | Clay 的技术空间**](https://www.techgrow.cn/posts/abf4aee1.html)；[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
 
 ### 设置基本信息
 
@@ -62,7 +62,7 @@ darkmode: false
 
 ### 拓展菜单
 
-例如想添加tags,categories和about的菜单，则对_Config.next.yml进行编辑：
+例如想添加tags,categories和about的菜单，则对_config.next.yml进行编辑：
 ```yml
 menu:
   home: / || fa fa-home
@@ -232,9 +232,58 @@ github_banner:
   title: Follow me on GitHub
 ```
 
+### 访客量、访问量、文章阅读数统计
+
+对_config.next.yml进行编辑：
+```yml
+# Show Views / Visitors of the website / page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: fa fa-eye
+```
+
+### 切换深色浅色模式的按钮
+
+具体参考：[**Hexo Next 8.x 主题添加可切换的暗黑模式 | Clay 的技术空间**](https://www.techgrow.cn/posts/abf4aee1.html)；[**hexo-next-darkmode/README_CN**](https://github.com/rqh656418510/hexo-next-darkmode/blob/main/README_CN.md)；
+
+先关闭原生深色系统，在_config.next.yml
+```yml
+darkmode: false
+```
+
+安装hexo-next-darkmode插件
+`npm install hexo-next-darkmode --save`
+
+在_config.next.yml添加
+```yml
+# Darkmode JS
+# For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js
+darkmode_js:
+  enable: true
+  bottom: '58px' # default: '32px'
+  right: '18px' # default: '32px'
+  left: 'unset' # default: 'unset'
+  time: '0.5s' # default: '0.3s'
+  mixColor: 'transparent' # default: '#fff'
+  backgroundColor: 'transparent' # default: '#fff'
+  buttonColorDark: '#100f2c' # default: '#100f2c'
+  buttonColorLight: '#fff' # default: '#fff'
+  isActivated: false # default false
+  saveInCookies: true # default: true
+  label: '🌓' # default: ''
+  autoMatchOsTheme: true # default: true
+  libUrl: # Set custom library cdn url for Darkmode.js
+```
+
 ### 实现全局音乐播放
 
-参考：
+具体参考：[**为Hexo博客添加全局APlayer播放器**](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer)
 
 安装APlayer插件
 `npm install --save hexo-tag-aplayer`
@@ -285,3 +334,5 @@ pjax: true
 更新pjax的方法
 `$ cd themes/next/source/lib/pjax`
 `$ git pull`
+
+---

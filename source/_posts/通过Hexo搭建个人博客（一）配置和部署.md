@@ -9,7 +9,7 @@ tags:
  - Git
 ---
 
-通过hexo和github page从零搭建个人博客
+通过hexo和github page从零搭建个人博客。
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ git初始化
 `cd [folder]`
 `git init`
 
-在github中创建新的资源库，并将repository name改成"你的用户名.github.io"，使得最后repository页面网址为`https://github.com/你的用户名/你的用户名.github.io`的形式；将id_rsa.pub的内容拷贝到Settings的SSH keys里面
+在github中创建新的资源库，并将repository name改成`你的用户名.github.io`，使得最后repository页面网址为`https://github.com/你的用户名/你的用户名.github.io`的形式；将id_rsa.pub的内容拷贝到Settings的SSH keys里面
 
 验证
 `ssh -T git@github.com`
@@ -76,6 +76,4 @@ deploy:
 `npm install hexo-deployer-git --save`
 `hexo deploy`或`hexo d` 用于部署网站，构建在GitHub的服务器中
 
-***
-
-[***下一篇：通过Hexo搭建个人博客（二）进行一些美化***]()
+---
